@@ -1,8 +1,10 @@
 ﻿using System;
+using Xunit;
 
 namespace WeatherStationTests
 {
-    public class Class1
+    public class WeatherStationTests
     {
+
     }
 }
