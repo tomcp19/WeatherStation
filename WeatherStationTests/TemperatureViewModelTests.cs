@@ -10,6 +10,7 @@ namespace WeatherStationTests
     public class TemperatureViewModelTests : IDisposable
     {
         // System Under Test
+        // Utilisez ce membre dans les tests
         TemperatureViewModel _sut = new TemperatureViewModel();
 
         /// <summary>
