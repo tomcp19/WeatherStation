@@ -6,6 +6,6 @@ namespace WeatherApp.ViewModels
 {
     public class TemperatureViewModel : BaseViewModel
     {
-        /// La réponse est ici : http://bit.ly/dellorkcir
+        /// La réponse est ici : http://bit.ly/420_dellorkcir
     }
 }
