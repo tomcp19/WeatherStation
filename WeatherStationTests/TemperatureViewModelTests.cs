@@ -33,7 +33,7 @@ namespace WeatherStationTests
             //rien ici car on a ce que ca prends en parametre
 
             // Act       
-            double actualF =  C * 9/5 + 32;
+            double actualF = Math.Round(C * 9/5 + 32,1);
 
             // Assert
             Assert.Equal(expected, actualF);
