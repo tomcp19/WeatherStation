@@ -30,9 +30,13 @@ namespace WeatherStationTests
         {
             // Arrange
 
+            //rien ici car on a ce que ca prends en parametre
+
             // Act       
+            double actualF =  C * 5/9 + 32;
 
             // Assert
+            Assert.Equal(expected, actualF);
 
             /// TODO : git commit -a -m "T01 CelsisInFahrenheit_AlwaysReturnGoodValue : Done"
         }
@@ -54,10 +58,12 @@ namespace WeatherStationTests
         {
             // Arrange
 
+
+            //ExpectedF = (expectedF - 32)
             // Act       
 
             // Assert
-
+            //Assert.AreEqual(expected, account.Balance);
             /// TODO : git commit -a -m "T02 FahrenheitInCelsius_AlwaysReturnGoodValue : Done"
         }
 
