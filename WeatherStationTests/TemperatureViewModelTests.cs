@@ -33,7 +33,7 @@ namespace WeatherStationTests
             //rien ici car on a ce que ca prends en parametre
 
             // Act       
-            double actualF =  C * 5/9 + 32;
+            double actualF =  C * 9/5 + 32;
 
             // Assert
             Assert.Equal(expected, actualF);
@@ -58,12 +58,16 @@ namespace WeatherStationTests
         {
             // Arrange
 
+            //rien ici car on a ce que ca prends en parametre
 
-            //ExpectedF = (expectedF - 32)
             // Act       
 
+                double actualC = Math.Round((F - 32) * 5 / 9,1);
+
             // Assert
-            //Assert.AreEqual(expected, account.Balance);
+
+                Assert.Equal(expected, actualC);
+
             /// TODO : git commit -a -m "T02 FahrenheitInCelsius_AlwaysReturnGoodValue : Done"
         }
 
