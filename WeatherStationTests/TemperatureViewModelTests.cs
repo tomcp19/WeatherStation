@@ -38,7 +38,7 @@ namespace WeatherStationTests
             // Assert
             Assert.Equal(expected, actualF);
 
-            /// TODO : git commit -a -m "T01 CelsisInFahrenheit_AlwaysReturnGoodValue : Done"
+            /// TODO : git commit -a -m "T01 CelsisInFahrenheit_AlwaysReturnGoodValue : Done" fait
         }
 
         /// <summary>
@@ -68,7 +68,7 @@ namespace WeatherStationTests
 
                 Assert.Equal(expected, actualC);
 
-            /// TODO : git commit -a -m "T02 FahrenheitInCelsius_AlwaysReturnGoodValue : Done"
+            /// TODO : git commit -a -m "T02 FahrenheitInCelsius_AlwaysReturnGoodValue : Done" 
         }
 
         /// <summary>
