@@ -5,6 +5,7 @@ using System.Text;
 using WeatherApp.ViewModels;
 using Xunit;
 
+
 namespace WeatherStationTests
 {
     public class TemperatureViewModelTests : IDisposable
@@ -34,7 +35,7 @@ namespace WeatherStationTests
 
             // Act       
             //double actualF = Math.Round(C * 9/5 + 32,1);
-            double actualF = _sut.CelsiusInFahrenheit(C);
+            double actualF = TemperatureViewModel.CelsiusInFahrenheit(C); //CelsiusInFahrenheit(double tempC)
 
             // Assert
             Assert.Equal(expected, actualF);
@@ -64,7 +65,7 @@ namespace WeatherStationTests
             // Act       
 
             // double actualC = Math.Round((F - 32) * 5 / 9,1);
-            double actualC = _sut.FahrenheitInCelsius(F);
+            double actualC = TemperatureViewModel.FahrenheitInCelsius(F);
             // Assert
 
             Assert.Equal(expected, actualC);
