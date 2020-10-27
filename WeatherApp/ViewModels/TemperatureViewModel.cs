@@ -13,27 +13,27 @@ namespace WeatherApp.ViewModels
 
 
         //******************
-        public ITemperatureService<TemperatureModel> TemperatureService;
-        public DelegateCommand<string> GetTempCommand { get; private set; }
+        public ITemperatureService service;
+        public DelegateCommand<string> GetTempCommand { get; set; }
+        public object CurrentTemp { get; set; }
 
-        public TemperatureModel CurrentTemp;
+        //public TemperatureModel CurrentTemp;
         //*****************
 
         public TemperatureViewModel()
         {
-
             GetTempCommand = new DelegateCommand<string>(GetTemp, CanGetTemperature);
             CurrentTemp = new TemperatureModel();
         }
 
-        private void GetTemp(string arg)
+        public void SetTemperatureService(ITemperatureService _service)
         {
-
+            ITemperatureService service = _service;
         }
 
-        public void SetTemperatureService(ITemperatureService<TemperatureModel> temperatureService) 
+        private void GetTemp(string obj)
         {
-            //return temperatureService;
+            CurrentTemp = service.GetTemp();
         }
 
         public static double CelsiusInFahrenheit(double tempC)

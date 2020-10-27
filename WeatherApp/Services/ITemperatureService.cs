@@ -6,9 +6,11 @@ using WeatherApp.Models;
 
 namespace WeatherApp.Services
 {
-    public interface ITemperatureService<T>
+    public interface ITemperatureService
     {
-        public async Task<TemperatureModel> GetTempAsync()
+        public TemperatureModel GetTemp();
+
+        /*public async Task<TemperatureModel> GetTempAsync()
         {
             TemperatureModel temp = await Task.Run(() => GetTemp());
              return temp;
@@ -21,6 +23,6 @@ namespace WeatherApp.Services
             TempReading.Temperature = 0; //TemperatureService.GetTemp();
 
             return TempReading;
-        }
+        }*/
     }
 }
