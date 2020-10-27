@@ -10,13 +10,13 @@ namespace WeatherApp.Services
     {
         public TemperatureModel GetTemp();
 
-        /*public async Task<TemperatureModel> GetTempAsync()
+        public async Task<TemperatureModel> GetTempAsync()
         {
             TemperatureModel temp = await Task.Run(() => GetTemp());
              return temp;
         }
 
-        private TemperatureModel GetTemp()
+        /*private TemperatureModel GetTemp()
         {
             TemperatureModel TempReading = new TemperatureModel();
 

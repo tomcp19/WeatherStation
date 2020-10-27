@@ -84,10 +84,10 @@ namespace WeatherStationTests
         public void GetTempCommand_ExecuteIfNullService_ShouldThrowNullException()
         {
             // Arrange
-
+            //pas besoin
 
             // Act       
-
+            //pas besoin
 
             // Assert
 
@@ -103,10 +103,11 @@ namespace WeatherStationTests
         public void CanGetTemp_WhenServiceIsNull_ReturnsFalse()
         {
             // Arrange
-
-            // Act
             TemperatureViewModel _sut = new TemperatureViewModel();
             _sut.service = null;
+
+            // Act
+
             Boolean canGetTemp = _sut.GetTempCommand.CanExecute(string.Empty);
             // Assert
             Assert.False(canGetTemp);
@@ -122,10 +123,18 @@ namespace WeatherStationTests
         public void CanGetTemp_WhenServiceIsSet_ReturnsTrue()
         {
             // Arrange
+            TemperatureViewModel _sut = new TemperatureViewModel();
+
+            var _mock = new Mock<ITemperatureService>();
+            _mock.Setup(x => x.GetTemp()).Returns(new TemperatureModel());
+
+            _sut.SetTemperatureService(_mock.Object);
 
             // Act       
+            Boolean canGetTemp = _sut.GetTempCommand.CanExecute(string.Empty);
 
             // Assert
+            Assert.True(canGetTemp);
 
             /// TODO : git commit -a -m "T05 CanGetTemp_WhenServiceIsSet_ReturnsTrue : Done"
         }
