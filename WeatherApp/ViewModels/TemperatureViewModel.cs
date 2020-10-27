@@ -50,7 +50,11 @@ namespace WeatherApp.ViewModels
 
         public bool CanGetTemperature(string obj)
         {
-            return false; //!string.IsNullOrEmpty(SelectedFolder);         
+            if (service == null)
+            {
+                return false;
+            }
+            else return true;
         }
     }
 }

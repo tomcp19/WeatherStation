@@ -104,9 +104,12 @@ namespace WeatherStationTests
         {
             // Arrange
 
-            // Act       
-
+            // Act
+            TemperatureViewModel _sut = new TemperatureViewModel();
+            _sut.service = null;
+            Boolean canGetTemp = _sut.GetTempCommand.CanExecute(string.Empty);
             // Assert
+            Assert.False(canGetTemp);
 
             /// TODO : git commit -a -m "T04 CanGetTemp_WhenServiceIsNull_ReturnsFalse : Done"
         }
