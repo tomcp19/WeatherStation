@@ -23,7 +23,7 @@ namespace WeatherApp.ViewModels
         public TemperatureViewModel()
         {
             GetTempCommand = new DelegateCommand<string>(GetTemp, CanGetTemperature);
-            //CurrentTemp = new TemperatureModel();
+            CurrentTemp = new TemperatureModel();
         }
 
         public void SetTemperatureService(ITemperatureService _service)
@@ -33,7 +33,6 @@ namespace WeatherApp.ViewModels
 
         private void GetTemp(string obj)
         {
-            if (service == null) { throw new NullReferenceException(); }
             CurrentTemp = service.GetTemp();
         }
 
