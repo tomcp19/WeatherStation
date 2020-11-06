@@ -148,12 +148,10 @@ namespace WeatherStationTests
         {
             // Arrange
             TemperatureViewModel _sut = new TemperatureViewModel();
+            Mock<ITemperatureService> _mock_ITemperatureService = new Mock<ITemperatureService>();
 
-            var _mock = new Mock<ITemperatureService>();
-            //_mock.Setup(x => x.GetTemp()).Returns(new TemperatureModel());
-
-            _sut.SetTemperatureService(_mock.Object);
             // Act       
+            _sut.SetTemperatureService(_mock_ITemperatureService.Object);
 
             // Assert
             Assert.NotNull(_sut.service);
