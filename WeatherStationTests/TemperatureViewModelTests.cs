@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Text;
+using System.Threading.Tasks;
 using WeatherApp.Models;
 using WeatherApp.Services;
 using WeatherApp.ViewModels;
@@ -92,6 +93,7 @@ namespace WeatherStationTests
             // Assert
 
             Assert.Throws<NullReferenceException>(()=> _sut.GetTempCommand.Execute(string.Empty));
+
             /// TODO : git commit -a -m "T03 GetTempCommand_ExecuteIfNullService_ShouldThrowNullException : Done"
         }
 
@@ -170,7 +172,10 @@ namespace WeatherStationTests
             Mock<ITemperatureService> _mockService = new Mock<ITemperatureService>();
 
             // Act       
-           // _mockService.Setup(x => x.GetTempAsync()).Returns(GetTempAsync());
+            _mockService.Setup(x => x.GetTempAsync()).Returns(Task.FromResult(new TemperatureModel()));
+            _sut.SetTemperatureService(_mockService.Object);
+            _sut.GetTempCommand.Execute(string.Empty);
+
             // Assert
             Assert.NotNull(_sut.CurrentTemp);
             /// TODO : git commit -a -m "T07 GetTempCommand_HaveCurrentTempWhenExecuted_ShouldPass : Done"
