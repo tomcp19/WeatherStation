@@ -126,7 +126,7 @@ namespace WeatherStationTests
             TemperatureViewModel _sut = new TemperatureViewModel();
 
             var _mock = new Mock<ITemperatureService>();
-            _mock.Setup(x => x.GetTemp()).Returns(new TemperatureModel());
+           //ancien code, ca a pas rapport avec le test... on veut seulement le SetTemperature, pas plus que ca... le mur atteint au test7 me force a revoir les tests et constater mes erreurs...
 
             _sut.SetTemperatureService(_mock.Object);
 
@@ -150,7 +150,7 @@ namespace WeatherStationTests
             TemperatureViewModel _sut = new TemperatureViewModel();
 
             var _mock = new Mock<ITemperatureService>();
-            _mock.Setup(x => x.GetTemp()).Returns(new TemperatureModel());
+            //_mock.Setup(x => x.GetTemp()).Returns(new TemperatureModel());
 
             _sut.SetTemperatureService(_mock.Object);
             // Act       
@@ -169,11 +169,12 @@ namespace WeatherStationTests
         public void GetTempCommand_HaveCurrentTempWhenExecuted_ShouldPass()
         {
             // Arrange
+            Mock<ITemperatureService> _mockService = new Mock<ITemperatureService>();
 
             // Act       
-
+           // _mockService.Setup(x => x.GetTempAsync()).Returns(GetTempAsync());
             // Assert
-
+            Assert.NotNull(_sut.CurrentTemp);
             /// TODO : git commit -a -m "T07 GetTempCommand_HaveCurrentTempWhenExecuted_ShouldPass : Done"
         }
 
@@ -189,14 +190,3 @@ namespace WeatherStationTests
         }
     }
 }
-
-// Arrange
-
-//var expected = new TemperatureModel();
-// var _mock = new Mock<ITemperatureService>();
-// _mock.Setup(x => x.GetTemp()).Returns(new TemperatureModel());
-
-// Act       
-
-//_sut.GetTempCommand.Execute(string.Empty);
-//var ActualTemperature = _sut.CurrentTemp;

@@ -8,21 +8,8 @@ namespace WeatherApp.Services
 {
     public interface ITemperatureService
     {
-        public TemperatureModel GetTemp();
 
-        public async Task<TemperatureModel> GetTempAsync()
-        {
-            TemperatureModel temp = await Task.Run(() => GetTemp());
-             return temp;
-        }
+        public Task<TemperatureModel> GetTempAsync();
 
-        /*private TemperatureModel GetTemp()
-        {
-            TemperatureModel TempReading = new TemperatureModel();
-
-            TempReading.Temperature = 0; //TemperatureService.GetTemp();
-
-            return TempReading;
-        }*/
     }
 }

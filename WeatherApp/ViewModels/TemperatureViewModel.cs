@@ -33,7 +33,7 @@ namespace WeatherApp.ViewModels
 
         private void GetTemp(string obj)
         {
-            CurrentTemp = service.GetTemp();
+            //CurrentTemp = service.GetTemp();
         }
 
         public static double CelsiusInFahrenheit(double tempC)
